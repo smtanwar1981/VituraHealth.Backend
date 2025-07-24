@@ -27,6 +27,6 @@ jobs:
       - name: Build and push .NET backend image
         uses: docker/build-push-action@v5
         with:
-          context: ./backend
+          context: .
           push: true
           tags: smtanwar/virtuhealth-backend:latest
