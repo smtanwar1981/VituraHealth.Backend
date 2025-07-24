@@ -19,8 +19,6 @@ Please follow these steps to get both the backend API and the React frontend up 
 
 Before you start, ensure you have the following installed:
 * **.NET SDK 8.0** or later: [Download .NET](https://dotnet.microsoft.com/download)
-* **Node.js (LTS version recommended)**: [Download Node.js](https://nodejs.org/en/download)
-* **npm** (comes with Node.js) or **Yarn**
 
 ### 2. Backend Setup (C# .NET API)
 
@@ -45,7 +43,6 @@ Before you start, ensure you have the following installed:
 * Implement proper backend pagination and filtering for prescriptions.
 * Add more robust client-side form validation.
 * Implement authentication and authorization.
-* Enhance UI/UX with more interactive elements and responsiveness.
 * Add delete/edit functionality for prescriptions.
 * Resolve the Tailwind CSS rendering inconsistency for a fully styled UI.
 
