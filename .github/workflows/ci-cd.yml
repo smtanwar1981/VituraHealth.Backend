@@ -29,4 +29,4 @@ jobs:
         with:
           context: ./backend
           push: true
-          tag: ${{ secrets.DOCKERHUB_USERNAME }}/virtuhealth-backend:${{ env.IMAGE_TAG}}
+          tag: ${{ secrets.DOCKERHUB_USERNAME }}/virtuhealth-backend:latest
