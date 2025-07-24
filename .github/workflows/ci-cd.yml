@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
 
+env:
+  IMAGE_NAME: virtuahealth-backend
+  DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -23,10 +27,16 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        
+      - name: Extract short SHA
+        id: extract_sha
+        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
 
       - name: Build and push .NET backend image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: smtanwar/virtuhealth-backend:latest
+          tags: |
+            ${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.SHORT_SHA }}
+            ${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME}}:latest
